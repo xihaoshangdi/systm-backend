@@ -1,7 +1,7 @@
 const pool = require('../Dao/operate');
 const userAddSql = `SELECT * FROM student`;
-const UserOp = {
-  addUser(param) {
+const StudentOp = {
+  findAllStudent(param) {
     let promise = new Promise(function(resolve, reject) {
       pool.query(userAddSql, param, function(err, results, fields) {
         resolve({
@@ -18,4 +18,4 @@ const UserOp = {
   }
 };
 
-module.exports = UserOp;
+module.exports = StudentOp;

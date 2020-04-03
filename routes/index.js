@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const user = require('../model/user');
+const StudentCurd = require('../model/StudentCurd');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const param = req.query || req.params;
 
-  user.addUser().then(function(data) {
+  StudentCurd.findAllStudent().then(function(data) {
     if (!data.err) {
       const results = data.results;
       res.setHeader('Access-Control-Allow-Origin', '*');
