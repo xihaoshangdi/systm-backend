@@ -3,11 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const allowCors = require('./lib/allowCors'); //跨域许可
+const allowCors = require('./lib/allow-cors'); //跨域许可
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const loginRouter = require('./routes/login');
+var accentRouter = require('./routes/accent');
+const studentsRouter = require('./routes/students');
 
 var app = express();
 
@@ -18,9 +18,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(allowCors); //跨域中间件
 //路由
-app.use('/login', loginRouter);
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/user', accentRouter);
+app.use('/students', studentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
