@@ -18,15 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(allowCors); //跨域中间件
 //路由
-app.get('/check', function (req, res, next) {
-  const token = req.headers.authorization;
-  console.log(token);
-
-  res.send(false);
-});
 app.use('/login', loginRouter);
-//check token
-// token过期bye
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 

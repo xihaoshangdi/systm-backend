@@ -3,8 +3,8 @@ mysql = {
   port: 3306,
   user: 'root',
   password: '123456',
-  database: 'student_model',
-  insecureAuth: true
+  database: 'dormroom',
+  insecureAuth: true,
 };
 
 module.exports = mysql;
