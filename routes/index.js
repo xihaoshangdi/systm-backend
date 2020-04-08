@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const StudentCurd = require('../model/StudentCurd');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
